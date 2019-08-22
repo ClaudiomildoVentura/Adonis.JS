@@ -35,6 +35,15 @@ export default class PageAlbums extends Component {
             })))
             .catch(err => console.log(err))
     }
+    onDelete = id =>{
+        if(!window.confirm("Deseja realizar a exclusão?")) return
+
+        axios
+        .delete(`http://localhost:3333/albums/${id}`)
+        .then(res => this.setState({albums: this.state.albums.filter(album => album.id !== id)
+        })).catch(err => console.log(err))
+
+    }
 
     render() {
         const { album, albums, artist } = this.state
@@ -43,10 +52,12 @@ export default class PageAlbums extends Component {
                 <AlbumCreate artist={artist} album={album} handleInputChange={this.handleInputChange} handleSubmit={this.handleSubmit} />
                 <div className="columns">
                     <div className="column">
-                        <Albums albums={albums} />
+                        <Albums albums={albums} onDelete={this.onDelete}/>
                     </div>
                 </div>
             </div>
         );
     }
 }
+
+//https://www.youtube.com/watch?v=rKnxaIJzsQ4&list=PLDLKWOQSNkl09bOUgiXfE9iyYrDblVJ85&index=12
