@@ -18,5 +18,4 @@ class AlbumsSchema extends Schema {
     this.drop('albums')
   }
 }
-
 module.exports = AlbumsSchema

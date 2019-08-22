@@ -6,7 +6,7 @@ const Model = use('Model')
 class Song extends Model {
 
     static get hidden() {
-        return ["updated_at", "created_at", "album_id"]  //Método responsável por esconder info relevantes
+        return ["updated_at", "created_at", "album_id"]  //Método responsável por ocultar info relevantes
     }
 }
 module.exports = Song

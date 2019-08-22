@@ -9,9 +9,9 @@ class SongsSchema extends Schema {
       table.increments()
       table.string("name")
       table
-      .integer("album_id")
+      .integer("album_id")    /* Parte utilizada para referenciar outras tabelas FOREIGN KEY */
       .references("id")
-      .inTable("albums")    //nome do create
+      .inTable("albums")    
       .onDelete("CASCADE")
       .onUpdate("CASCADE")
       table.timestamps()
@@ -22,5 +22,4 @@ class SongsSchema extends Schema {
     this.drop('songs')
   }
 }
-
 module.exports = SongsSchema

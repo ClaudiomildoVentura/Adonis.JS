@@ -11,5 +11,4 @@ class Album extends Model {
         return ["updated_at", "created_at"]     //Método responsável por esconder info relevantes
     }
 }
-
 module.exports = Album

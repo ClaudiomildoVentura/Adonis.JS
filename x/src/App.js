@@ -17,13 +17,23 @@ export default class App extends Component {
 
   render() {
     return (
-        <div className="App">
-          {this.state.albums.map(album => (
-            <p>
-              {album.id}.{album.name}
-            </p>
-          ))}
+      <div className="section">
+        <div className="columns">
+          <div className="column">
+            {this.state.albums.map(album => (
+              <div className="media box">
+                <div className="media-left">{album.id}</div>
+                <div className="media-content">{album.name}</div>
+                <div className="media-right">
+                  <button>Detalhes</button>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
+      </div>
     );
   }
 }
+
+//https://www.youtube.com/watch?v=PUqBKUNpDYQ&list=PLDLKWOQSNkl09bOUgiXfE9iyYrDblVJ85&index=8
