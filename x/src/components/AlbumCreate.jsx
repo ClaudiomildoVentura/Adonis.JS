@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AlbumCreate = ({album, artist, handleInputChange}) => (
+const AlbumCreate = ({album, artist, handleInputChange, handleSubmit}) => (
     <>
         <div className="box">
             <h1 className="title">Adicionar novo album</h1>
@@ -17,7 +17,7 @@ const AlbumCreate = ({album, artist, handleInputChange}) => (
                     </div>
                 </div>
                 <div className="field">
-                    <button className="button">Adicionar</button>
+                    <button className="button" onClick={handleSubmit}>Adicionar</button>
                 </div>
             </div>
         </div>
