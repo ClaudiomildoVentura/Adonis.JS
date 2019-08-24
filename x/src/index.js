@@ -1,6 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import PageAlbums from './components/PageAlbums';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import PageAlbums from "./components/PageAlbums"
+import Album from "./components/Album"
 
-ReactDOM.render(<PageAlbums />, document.getElementById('root'));
+const Routes = () => (
+    <Router>
+        <div className="section container">
+            <Switch>
+                <Route exact path="/" component={PageAlbums} />
+                <Route exact path="/albums/:id" component={Album} />
+            </Switch>
+        </div>
+    </Router>
+)
+ReactDOM.render(<Routes />, document.getElementById('root'));

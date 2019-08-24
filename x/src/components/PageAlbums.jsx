@@ -48,7 +48,7 @@ export default class PageAlbums extends Component {
     render() {
         const { album, albums, artist } = this.state
         return (
-            <div className="section container">
+            <div className=" container">
                 <AlbumCreate artist={artist} album={album} handleInputChange={this.handleInputChange} handleSubmit={this.handleSubmit} />
                 <div className="columns">
                     <div className="column">
@@ -59,5 +59,3 @@ export default class PageAlbums extends Component {
         );
     }
 }
-
-//https://www.youtube.com/watch?v=rKnxaIJzsQ4&list=PLDLKWOQSNkl09bOUgiXfE9iyYrDblVJ85&index=12
