@@ -33,7 +33,7 @@ export class Album extends Component {
     }
     
     handleInputChange = ({ target }) => {
-        this.setState({ [target.name]: target.value })
+        this.setState({ [target.name]: target.value || '' })
     }
 
     onCreateM = () => {
@@ -100,5 +100,4 @@ export class Album extends Component {
         )
     }
 }
-
 export default Album
